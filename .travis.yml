@@ -1,33 +1,33 @@
 language: c
 
 notifications:
-	- email: true
+  - email: true
 
 sudo: false
 
 before_install:
-	# Install dependencies and ProB Nightly
-	- wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz
-	- tar xvf ProB.linux64.tar.gz
-	- apt-get install build-essential libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen
+  # Install dependencies and ProB Nightly
+  - wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz
+  - tar xvf ProB.linux64.tar.gz
+  - apt-get install build-essential libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen
 
 before_script:
-	# Location of ProB
-	- export PROB_HOME=$PWD/ProB
+  # Location of ProB
+  - export PROB_HOME=$PWD/ProB
 
-	- mkdir bin
-	- export LTSMIN_HOME=$PWD/bin/ltsmin
+  - mkdir bin
+  - export LTSMIN_HOME=$PWD/bin/ltsmin
 
 install:
-	- git submodule update --init
-	- cd ltsmin
-	- git submodule update --init
-	- ./ltsminreconf
-	- ./configure --without-spins --without-scoop --prefix $LTSMIN_HOME
-	- make all
-	- make install
+  - git submodule update --init
+  - cd ltsmin
+  - git submodule update --init
+  - ./ltsminreconf
+  - ./configure --without-spins --without-scoop --prefix $LTSMIN_HOME
+  - make all
+  - make install
 
 after_script:
-	# Run some tests
-	- LD_LIBRARY_PATH=$PROB_HOME/lib ./probcli -ltsmin2 $PROB_HOME/ltsmin.probz ~/ProB-LTSmin-iFM16/models/b/Philosophers.mch &
-	- $LTSMIN_HOME/bin/prob2lts-sym --vset=lddmc --lace-workers=1 $PROB_HOME/ltsmin.probz
+  # Run some tests
+  - LD_LIBRARY_PATH=$PROB_HOME/lib ./probcli -ltsmin2 $PROB_HOME/ltsmin.probz ~/ProB-LTSmin-iFM16/models/b/Philosophers.mch &
+  - $LTSMIN_HOME/bin/prob2lts-sym --vset=lddmc --lace-workers=1 $PROB_HOME/ltsmin.probz
