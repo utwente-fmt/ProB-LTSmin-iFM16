@@ -9,7 +9,7 @@ before_install:
   # Install dependencies and ProB Nightly
   - wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz
   - tar xvf ProB.linux64.tar.gz
-  - apt-get install build-essential libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen
+  - sudo apt-get install build-essential libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen
 
 before_script:
   # Location of ProB
