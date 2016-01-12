@@ -3,7 +3,7 @@ language: c
 notifications:
   - email: true
 
-sudo: false
+sudo: true
 
 before_install:
   # Install dependencies and ProB Nightly
