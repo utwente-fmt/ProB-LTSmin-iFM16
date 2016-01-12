@@ -3,9 +3,9 @@ Symbolic Reachability Analysis of the B-Method through ProB and LTSmin
 
 This repository hosts the models of the experimental section in the paper and a guide on how to build and run the tools.
 
-Please note the implementation **ONLY** works on Linux and Mac OS. 
+Please note the implementation **ONLY** works on [Linux] and [Mac OS]. 
 
-Submitted to [iFM 2016](http://en.ru.is/ifm/). 
+Submitted to [iFM 2016]. 
 
 Authors:
 ===
@@ -28,11 +28,12 @@ Authors:
 Table of Contents
 ===
 
-* [Abstract](#abstract)
-* [Installation](#installation)
-    - [Linux](#linux)
-    - [Mac OS](#mac-os)
-* [Usage](#usage)
+* [Abstract]
+* [Prerequisites]
+* [Installation]
+    - [Linux]
+    - [Mac OS]
+* [Usage]
 * [Experiments](#experiments)
 
 Abstract
@@ -56,8 +57,22 @@ or symmetry reduction. We thus provide a new scalable, symbolic analysis
 algorithm for the B-method, along with a platform to integrate other model
 checking improvements via LTSmin in the future*
 
+Prerequisites
+===
+
+*[ProB]* is...
+
+*[LTSmin]* is...
+
 Installation
 ===
+
+### Linux
+
+
+### Mac OS
+
+
 
 
 Usage
@@ -68,5 +83,21 @@ Experiments
 ===
 
 
+
+[iFM 2016]: http://en.ru.is/ifm/
+[ZeroMQ]: http://zeromq.org/
+[ZeroMQC]: http://zeromq.org/bindings:c
+[LTSmin]: http://fmt.cs.utwente.nl/tools/ltsmin/
+[LTSmin ProB Branch]: https://github.com/Meijuh/ltsmin/tree/prob
+[ProB]: https://www3.hhu.de/stups/prob/index.php/Main_Page
+[ProBNightly]: http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/
+
+[Abstract]: #abstract
+[Prerequisites]: #prerequisites
+[Installation]: #installation
+[Linux]: #linux
+[Mac OS]: #mac-os
+[Usage]: #usage
+[Experiments]: #experiments
 
 
