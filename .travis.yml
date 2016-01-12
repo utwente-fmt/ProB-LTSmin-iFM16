@@ -10,6 +10,9 @@ before_install:
   - wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz
   - tar xvf ProB.linux64.tar.gz
   - sudo apt-get install build-essential automake autoconf libtool libzmq3 libzmq3-dev libboost-all-dev libpopt-dev zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen
+  - sudo add-apt-repository ppa:dns/gnu --yes
+  - sudo apt-get update -q
+  - sudo apt-get install --only-upgrade autoconf
 
 before_script:
   # Location of ProB
