@@ -82,6 +82,8 @@ Usage
 Experiments
 ===
 
+### Dining Philosophers
+
 
 
 [iFM 2016]: http://en.ru.is/ifm/
