@@ -199,7 +199,7 @@ Coverage:
  All 5 possible operations have been covered
 ```
 
-Where all the statistics are self explanatory. 
+Where all the statistics are self explanatory. More info can be found at the [ProB CLI Documentation].
 
 ### ProB to LTSmin link
 
@@ -257,6 +257,8 @@ prob2lts-sym: group_next: 714 nodes total
 prob2lts-sym: group_explored: 465 nodes, 588 short vectors total
 ```
 
+Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for the tool. 
+
 Where:
 
 * **Groups** are *Events*, minus one ( -1 ) as the Initialisation event is counted from ProB.
@@ -275,6 +277,7 @@ Where:
 [ProBNightly]: http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/
 [Homebrew]: http://brew.sh/
 [Xcode]: https://developer.apple.com/xcode/
+[ProB CLI Documentation]: https://www3.hhu.de/stups/prob/index.php/ProB_Cli
 
 [Abstract]: #abstract
 [Prerequisites]: #prerequisites
