@@ -70,7 +70,7 @@ Prerequisites
 Installation
 ===
 
-In order to clone this repository you will require `git` to be set up and installed on your machine. 
+In order to clone this repository you will require `git` to be set up and installed on your machine. If you experience any issues please also consult the [LTSmin] website for further instructions. 
 
 ### Linux
 
