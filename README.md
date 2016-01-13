@@ -63,9 +63,10 @@ checking improvements via LTSmin in the future*
 Prerequisites
 ===
 
-*[ProB]* is...
+*[ProB]* is an animator, constraint solver and model checker for the B-Method. It allows fully automatic animation of B specifications, and can be used to systematically check a specification.
 
-*[LTSmin]* is...
+*[LTSmin]* is a high-performance language-independent model checker that allows
+numerous modelling language front-ends to be connected to various analysis algorithms, through a common interface known as PINS. It offers a wide spectrum of parallel and symbolic algorithms.
 
 Installation
 ===
