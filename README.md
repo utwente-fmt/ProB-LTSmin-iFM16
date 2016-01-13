@@ -34,6 +34,9 @@ Table of Contents
     - [Linux]
     - [Mac OS]
 * [Usage]
+    - [ProB CLI]
+    - [ProB to LTSmin link]
+    - [LTSmin Symbolic]
 * [Experiments]
 
 Abstract
@@ -146,8 +149,122 @@ run a shell script.
 Usage
 ===
 
+### ProB CLI
+
+To run model checks using only ProB you can use the following commands. From the ProB folder run the following:
+
+```
+$ LD_LIBRARY_PATH=./lib ./probcli [PATH TO MACHINE FILE] --model_check -cs
+```
+
+Where `[PATH TO MACHINE FILE]` is the location machine file you want to run.
+
+You can then add the following flags to customise the model checking process:
+
+```
+PROPERTIES
+----------
+
+-nodead     Disables deadlock checking
+-noinv      Disables invariant checking
+-noass      Disables assertion checks
+-nogoal     GOALS not checked
 
 
+OTHER
+-----
+
+--model_check   Starts the ProB model checker with the supplied machine
+-cs             Shows coverage statistics after when model check complete
+-log            ProB writes logs of the model check that took place
+-bf             Sets the exploration algorithm to Breadth-first Search
+-h              Shows a list of all available command line options
+
+```
+
+With the `-cs` flag enabled you will see information about the model check, similar to the following:
+
+```
+ALL OPERATIONS COVERED
+
+% All open nodes visited
+Model Checking Time: 320 ms (320 ms walltime)
+States analysed: 243
+Transitions fired: 946
+No Counter Example found. ALL nodes visited.
+Coverage:
+ States: 244
+ Transitions: 946
+ Uninitialised states: 1 (root and constants only)
+ All 5 possible operations have been covered
+```
+
+Where all the statistics are self explanatory. 
+
+### ProB to LTSmin link
+
+To run model checks using LTSmin we need to open a connection to ProB. The following commands open the link.
+
+```
+$ LD_LIBRARY_PATH=./lib ./probcli -ltsmin2 ~/ltsmin.probz [PATH TO MACHINE FILE] 
+```
+
+Where `[PATH TO MACHINE FILE]` is the location machine file you want to run.
+
+Once this loads and shows `Starting LTSmin Server...` open a new terminal and continue with the steps below. 
+
+### LTSmin Symbolic 
+
+To run model checks using LTSmin you can use the following commands.
+
+```
+$ ~/bin/ltsmin/bin/prob2lts-sym --vset=lddmc --lace-workers=1 ~/ltsmin.probz
+```
+
+This will run the model checking process with LTSmin using the Symbolic model checking algorithms. You can then add the following flags to customise the model checking process:
+
+```
+-v              increase verbosity and show matrix information
+--labels        print state variable, type names, and state and action labels
+--matrix        print dependency matrix on exit 
+--deadlock      detect deadlocks
+-r              apply transformations to the dependency matrix
+--no-close      Keep the ProB connection open
+-h              Shows a full list of all available options. 
+```
+
+Upon completion of the process if a deadlock is found it will look similar to the following:
+
+```
+prob2lts-sym: deadlock found
+prob2lts-sym: deadlock detection took 0.730 real 0.090 user 0.160 sys
+prob2lts-sym: exiting now
+prob2lts-sym: terminating ProB connection
+```
+
+If no deadlock is found and the model checking is complete then metrics you want to look for are:
+
+```
+prob2lts-sym: connecting to zocket ipc:///home/user/ltsmin.probz
+prob2lts-sym: state vector length is 17; there are 12 groups
+...
+prob2lts-sym: Exploration took 180 group checks and 180 next state calls
+prob2lts-sym: reachability took 0.940 real 0.180 user 0.170 sys
+prob2lts-sym: counting visited states...
+prob2lts-sym: counting took 0.000 real 0.000 user 0.000 sys
+prob2lts-sym: state space has 80719 states, 3118 nodes
+prob2lts-sym: group_next: 714 nodes total
+prob2lts-sym: group_explored: 465 nodes, 588 short vectors total
+```
+
+Where:
+
+* **Groups** are *Events*, minus one ( -1 ) as the Initialisation event is counted from ProB.
+* **Reachability**:
+    - Real is the Wall clock time in Milliseconds (ms)
+    - User is the time the CPU took to compute the model check in Milliseconds (ms)
+* **State Space** "has *X* states" is the number of states, not the nodes.
+* **Short vectors** is the total number of Next State Calls from the model checking process.  
 
 [iFM 2016]: http://en.ru.is/ifm/
 [ZeroMQ]: http://zeromq.org/
@@ -165,6 +282,9 @@ Usage
 [Linux]: #linux
 [Mac OS]: #mac-os
 [Usage]: #usage
+[ProB CLI]: #prob-cli
+[ProB to LTSmin link]: #prob-to-ltsmin-link
+[LTSmin Symbolic]: #ltsmin-symbolic
 [Experiments]: Experiments.md
 [install_ubuntu.sh]: install_ubuntu.sh
 [install_mac.sh]: install_mac.sh
