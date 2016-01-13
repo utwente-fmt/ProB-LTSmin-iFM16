@@ -258,8 +258,6 @@ prob2lts-sym: group_next: 714 nodes total
 prob2lts-sym: group_explored: 465 nodes, 588 short vectors total
 ```
 
-Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for the tool. 
-
 Where:
 
 * **Groups** are *Events*, minus one ( -1 ) as the Initialisation event is counted from ProB.
@@ -268,6 +266,10 @@ Where:
     - User is the time the CPU took to compute the model check in Milliseconds (ms)
 * **State Space** "has *X* states" is the number of states, not the nodes.
 * **Short vectors** is the total number of Next State Calls from the model checking process.  
+
+Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for the tool. 
+
+
 
 [iFM 2016]: http://en.ru.is/ifm/
 [ZeroMQ]: http://zeromq.org/
