@@ -34,7 +34,7 @@ Table of Contents
     - [Linux]
     - [Mac OS]
 * [Usage]
-* [Experiments](#experiments)
+* [Experiments]
 
 Abstract
 ===
@@ -79,11 +79,6 @@ Usage
 ===
 
 
-Experiments
-===
-
-### Dining Philosophers
-
 
 
 [iFM 2016]: http://en.ru.is/ifm/
@@ -100,6 +95,6 @@ Experiments
 [Linux]: #linux
 [Mac OS]: #mac-os
 [Usage]: #usage
-[Experiments]: #experiments
+[Experiments]: Experiments.md
 
 
