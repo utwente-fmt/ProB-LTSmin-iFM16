@@ -116,6 +116,8 @@ Before we can build the LTSmin ProB link we need to install required dependencie
 $ 
 ```
 
+Once all the dependencies have been installed above we can now continue to build LTSmin ProB link tools:
+
 1. Clone the repository:
     * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
 2. Change directory:
