@@ -67,13 +67,79 @@ Prerequisites
 Installation
 ===
 
+In order to clone this repository you will require `git` to be set up and installed on your machine. 
+
 ### Linux
 
+Firstly for Ubuntu we need to install the following dependencies: 
+
+```
+$ sudo apt-get install build-essential automake autoconf libtool 
+libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev 
+zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen wget git
+```
+
+Once these are installed we can now begin to build the required components for the integration.
+
+1. Clone the repository:
+    * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
+2. Change directory:
+    * `$ cd ProB-LTSmin-iFM16`
+3. Get the latest ProB LTSmin development tool: 
+    * `$ wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz`
+4. Unpack ProB:
+    * `$ tar xvf ProB.linux64.tar.gz`
+5. Clone the LTSmin ProB Branch:
+    * `git submodule update --init`
+6. Change directory to ltsmin:
+    * `cd ltsmin`
+7. Get the latest modules for ltsmin:
+    * `git submodule update --init`
+8. Run `ltsminreconf`:
+    * `./ltsminreconf`
+9. Configure the LTSmin build:
+    * `./configure --without-spins --without-scoop --prefix ~/bin/ltsmin`
+    * Change the prefix location. At current it will install to your `$HOME` directory under `bin/ltsmin`.
+10. Make and install:
+    * `make all install`
+
+We have automated the above process in [install_ubuntu.sh] if you would rather
+run a shell script. 
 
 ### Mac OS
 
+Before beginning the installation process on Mac we recommend having [Xcode], [Developer Command Line tools](https://apple.stackexchange.com/questions/88535/how-to-download-the-command-line-tools-for-xcode-without-the-downloads-for-devel) and [Homebrew] installed. 
 
+Before we can build the LTSmin ProB link we need to install required dependencies: 
 
+```
+$ 
+```
+
+1. Clone the repository:
+    * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
+2. Change directory:
+    * `$ cd ProB-LTSmin-iFM16`
+3. Get the latest ProB LTSmin development tool: 
+    * `$ wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.mac_os.10.7.5.x86_64.tar.gz`
+4. Unpack ProB:
+    * `$ tar xvf ProB.mac_os.10.7.5.x86_64.tar.gz`
+5. Clone the LTSmin ProB Branch:
+    * `git submodule update --init`
+6. Change directory to ltsmin:
+    * `cd ltsmin`
+7. Get the latest modules for ltsmin:
+    * `git submodule update --init`
+8. Run `ltsminreconf`:
+    * `./ltsminreconf`
+9. Configure the LTSmin build:
+    * `./configure --without-spins --without-scoop --prefix ~/bin/ltsmin`
+    * Change the prefix location. At current it will install to your `$HOME` directory under `bin/ltsmin`.
+10. Make and install:
+    * `make all install`
+
+We have automated the above process in [install_mac.sh] if you would rather
+run a shell script. 
 
 Usage
 ===
@@ -88,6 +154,8 @@ Usage
 [LTSmin ProB Branch]: https://github.com/Meijuh/ltsmin/tree/prob
 [ProB]: https://www3.hhu.de/stups/prob/index.php/Main_Page
 [ProBNightly]: http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/
+[Homebrew]: http://brew.sh/
+[Xcode]: https://developer.apple.com/xcode/
 
 [Abstract]: #abstract
 [Prerequisites]: #prerequisites
@@ -96,5 +164,7 @@ Usage
 [Mac OS]: #mac-os
 [Usage]: #usage
 [Experiments]: Experiments.md
+[install_ubuntu.sh]: install_ubuntu.sh
+[install_mac.sh]: install_mac.sh
 
 
