@@ -157,7 +157,7 @@ To run model checks using only ProB you can use the following commands. From the
 $ LD_LIBRARY_PATH=./lib ./probcli [PATH TO MACHINE FILE] --model_check -cs
 ```
 
-Where `[PATH TO MACHINE FILE]` is the location machine file you want to run.
+Where `[PATH TO MACHINE FILE]` is the machine file you want to run.
 
 You can then add the following flags to customise the model checking process:
 
@@ -209,7 +209,7 @@ To run model checks using LTSmin we need to open a connection to ProB. The follo
 $ LD_LIBRARY_PATH=./lib ./probcli -ltsmin2 ~/ltsmin.probz [PATH TO MACHINE FILE] 
 ```
 
-Where `[PATH TO MACHINE FILE]` is the location machine file you want to run.
+Where `[PATH TO MACHINE FILE]` is the machine file you want to run.
 
 Once this loads and shows `Starting LTSmin Server...` open a new terminal and continue with the steps below. 
 
