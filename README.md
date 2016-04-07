@@ -120,7 +120,8 @@ Before we can build the LTSmin ProB link we need to install required dependencie
 
 ```
 $ brew tap homebrew/science
-$ brew install asciidoc xmlto boost popt lzlib flex ant doxygen automake autoconf libtool zeromq czmq hwloc
+$ brew install asciidoc xmlto boost popt lzlib flex ant doxygen automake
+autoconf libtool zeromq czmq hwloc wget git
 ```
 
 Once all the dependencies have been installed above we can now continue to build LTSmin ProB link tools:
