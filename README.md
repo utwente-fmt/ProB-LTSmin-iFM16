@@ -73,15 +73,15 @@ numerous modelling language front-ends to be connected to various analysis algor
 Installation
 ---
 
-In order to clone this repository you will require `git` to be set up and installed on your machine. If you experience any issues please also consult the [LTSmin] website for further instructions. 
+In order to clone this repository you will require `git` to be set up and installed on your machine. If you experience any issues please also consult the [LTSmin] website for further instructions.
 
 ### Linux
 
-Firstly for Ubuntu we need to install the following dependencies: 
+Firstly for Ubuntu we need to install the following dependencies:
 
 ```
-$ sudo apt-get install build-essential automake autoconf libtool 
-libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev 
+$ sudo apt-get install build-essential automake autoconf libtool
+libzmq3 libzmq3-dev libczmq libczmq-dev libboost-all-dev libpopt-dev
 zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen wget git
 ```
 
@@ -91,7 +91,7 @@ Once these are installed we can now begin to build the required components for t
     * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
 2. Change directory:
     * `$ cd ProB-LTSmin-iFM16`
-3. Get the latest ProB LTSmin development tool: 
+3. Get the latest ProB LTSmin development tool:
     * `$ wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.linux64.tar.gz`
 4. Unpack ProB:
     * `$ tar xvf ProB.linux64.tar.gz`
@@ -112,9 +112,9 @@ Once these are installed we can now begin to build the required components for t
 
 ### Mac OS
 
-Before beginning the installation process on Mac we recommend having [Xcode], [Developer Command Line tools](https://apple.stackexchange.com/questions/88535/how-to-download-the-command-line-tools-for-xcode-without-the-downloads-for-devel) and [Homebrew] installed. 
+Before beginning the installation process on Mac we recommend having [Xcode], [Developer Command Line tools](https://apple.stackexchange.com/questions/88535/how-to-download-the-command-line-tools-for-xcode-without-the-downloads-for-devel) and [Homebrew] installed.
 
-Before we can build the LTSmin ProB link we need to install required dependencies: 
+Before we can build the LTSmin ProB link we need to install required dependencies:
 
 ```
 $ brew tap homebrew/science
@@ -128,7 +128,7 @@ Once all the dependencies have been installed above we can now continue to build
     * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
 2. Change directory:
     * `$ cd ProB-LTSmin-iFM16`
-3. Get the latest ProB LTSmin development tool: 
+3. Get the latest ProB LTSmin development tool:
     * `$ wget http://nightly.cobra.cs.uni-duesseldorf.de/ltsmin/ProB.mac_os.10.7.5.x86_64.tar.gz`
 4. Unpack ProB:
     * `$ tar xvf ProB.mac_os.10.7.5.x86_64.tar.gz`
@@ -146,7 +146,7 @@ Once all the dependencies have been installed above we can now continue to build
 10. Make and install:
     * `make all install`
 
-If you experience issues with xmldoc giving I/O errors you will need to either 
+If you experience issues with xmldoc giving I/O errors you will need to either
 add the following export to your bashrc, or execute in terminal:
 
 ```
@@ -214,14 +214,14 @@ Where all the statistics are self explanatory. More info can be found at the [Pr
 To run model checks using LTSmin we need to open a connection to ProB. The following commands open the link.
 
 ```
-$ LD_LIBRARY_PATH=./lib ./probcli -ltsmin2 ~/ltsmin.probz [PATH TO MACHINE FILE] 
+$ LD_LIBRARY_PATH=./lib ./probcli -ltsmin2 ~/ltsmin.probz [PATH TO MACHINE FILE]
 ```
 
 Where `[PATH TO MACHINE FILE]` is the machine file you want to run.
 
-Once this loads and shows `Starting LTSmin Server...` open a new terminal and continue with the steps below. 
+Once this loads and shows `Starting LTSmin Server...` open a new terminal and continue with the steps below.
 
-### LTSmin Symbolic 
+### LTSmin Symbolic
 
 To run model checks using LTSmin you can use the following commands.
 
@@ -234,11 +234,11 @@ This will run the model checking process with LTSmin using the Symbolic model ch
 ```
 -v              increase verbosity and show matrix information
 --labels        print state variable, type names, and state and action labels
---matrix        print dependency matrix on exit 
+--matrix        print dependency matrix on exit
 --deadlock      detect deadlocks
 -r              apply transformations to the dependency matrix
 --no-close      Keep the ProB connection open
--h              Shows a full list of all available options. 
+-h              Shows a full list of all available options.
 ```
 
 Upon completion of the process if a deadlock is found it will look similar to the following:
@@ -272,9 +272,9 @@ Where:
     - Real is the Wall clock time in Milliseconds (ms)
     - User is the time the CPU took to compute the model check in Milliseconds (ms)
 * **State Space** "has *X* states" is the number of states, not the nodes.
-* **Short vectors** is the total number of Next State Calls from the model checking process.  
+* **Short vectors** is the total number of Next State Calls from the model checking process.
 
-Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for the tool. 
+Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for the tool.
 
 
 
