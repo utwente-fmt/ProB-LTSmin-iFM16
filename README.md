@@ -119,7 +119,8 @@ Before beginning the installation process on Mac we recommend having [Xcode], [D
 Before we can build the LTSmin ProB link we need to install required dependencies: 
 
 ```
-$ 
+$ brew tap homebrew/science
+$ brew install asciidoc xmlto boost popt lzlib flex ant doxygen automake autoconf libtool zeromq czmq hwloc
 ```
 
 Once all the dependencies have been installed above we can now continue to build LTSmin ProB link tools:
