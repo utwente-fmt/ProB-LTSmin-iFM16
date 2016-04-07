@@ -1,11 +1,13 @@
-Symbolic Reachability Analysis of the B-Method through ProB and LTSmin
+Symbolic Reachability Analysis of B through ProB and LTSmin
 ---
 
 This repository hosts the models of the experimental section in the paper and a guide on how to build and run the tools.
 
-Please note the implementation **ONLY** works on [Linux] and [Mac OS]. 
+Please note the implementation **ONLY** works on [Linux] and [Mac OS].
 
-Submitted to [iFM 2016]. 
+Submitted and accepted to [iFM 2016], Springer LNCS Volume 9681.
+
+Authors version available at [arXiv.org].
 
 Authors:
 ===
@@ -272,6 +274,7 @@ Running `man ~/bin/ltsmin/bin/prob2lts-sym` will show you the manual pages for t
 
 
 [iFM 2016]: http://en.ru.is/ifm/
+[arXiv.org]: https://arxiv.org/abs/1603.04401
 [ZeroMQ]: http://zeromq.org/
 [ZeroMQC]: http://zeromq.org/bindings:c
 [LTSmin]: http://fmt.cs.utwente.nl/tools/ltsmin/
