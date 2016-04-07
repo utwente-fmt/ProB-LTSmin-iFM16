@@ -146,6 +146,12 @@ Once all the dependencies have been installed above we can now continue to build
 10. Make and install:
     * `make all install`
 
+If you experience issues with xmldoc giving I/O errors you will need to either 
+add the following export to your bashrc, or execute in terminal:
+
+```
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+```
 
 
 Usage
