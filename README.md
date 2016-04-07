@@ -109,8 +109,6 @@ Once these are installed we can now begin to build the required components for t
 10. Make and install:
     * `make all install`
 
-We have automated the above process in [install_ubuntu.sh] if you would rather
-run a shell script. 
 
 ### Mac OS
 
@@ -148,8 +146,7 @@ Once all the dependencies have been installed above we can now continue to build
 10. Make and install:
     * `make all install`
 
-We have automated the above process in [install_mac.sh] if you would rather
-run a shell script. 
+
 
 Usage
 ---
