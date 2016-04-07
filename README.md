@@ -1,5 +1,5 @@
 Symbolic Reachability Analysis of B through ProB and LTSmin
----
+===
 
 This repository hosts the models of the experimental section in the paper and a guide on how to build and run the tools.
 
@@ -10,7 +10,7 @@ Submitted and accepted to [iFM 2016], Springer LNCS Volume 9681.
 Authors version available at [arXiv.org].
 
 Authors:
-===
+---
 
 * Institut für Informatik, Heinrich Heine University Düsseldorf, Germany
     - Jens Bendisposto:      [<bendisposto@cs.uni-duesseldorf.de>](mailto:bendisposto@cs.uni-duesseldorf.de)
@@ -28,7 +28,7 @@ Authors:
 † Partly supported by EPSRC grant: EP/M506655/1
 
 Table of Contents
-===
+---
 
 * [Abstract]
 * [Prerequisites]
@@ -42,7 +42,7 @@ Table of Contents
 * [Experiments]
 
 Abstract
-===
+---
 
 *We present a symbolic reachability analysis for the B-method,
 which can provide a significant speed up over traditional explicit state model
@@ -63,7 +63,7 @@ algorithm for the B-method, along with a platform to integrate other model
 checking improvements via LTSmin in the future*
 
 Prerequisites
-===
+---
 
 *[ProB]* is an animator, constraint solver and model checker for the B-Method. It allows fully automatic animation of B specifications, and can be used to systematically check a specification.
 
@@ -71,7 +71,7 @@ Prerequisites
 numerous modelling language front-ends to be connected to various analysis algorithms, through a common interface known as PINS. It offers a wide spectrum of parallel and symbolic algorithms.
 
 Installation
-===
+---
 
 In order to clone this repository you will require `git` to be set up and installed on your machine. If you experience any issues please also consult the [LTSmin] website for further instructions. 
 
@@ -151,7 +151,7 @@ We have automated the above process in [install_mac.sh] if you would rather
 run a shell script. 
 
 Usage
-===
+---
 
 ### ProB CLI
 
