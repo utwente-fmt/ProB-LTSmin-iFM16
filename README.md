@@ -88,7 +88,7 @@ zlib1g-dev zlib1g flex ant asciidoc xmlto doxygen wget git
 Once these are installed we can now begin to build the required components for the integration.
 
 1. Clone the repository:
-    * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
+    * `$ git clone git@github.com:utwente-fmt/ProB-LTSmin-iFM16.git`
 2. Change directory:
     * `$ cd ProB-LTSmin-iFM16`
 3. Get the latest ProB LTSmin development tool:
@@ -125,7 +125,7 @@ autoconf libtool zeromq czmq hwloc wget git
 Once all the dependencies have been installed above we can now continue to build LTSmin ProB link tools:
 
 1. Clone the repository:
-    * `$ git clone git@github.com:lordqwerty/ProB-LTSmin-iFM16.git`
+    * `$ git clone git@github.com:utwente-fmt/ProB-LTSmin-iFM16.git`
 2. Change directory:
     * `$ cd ProB-LTSmin-iFM16`
 3. Get the latest ProB LTSmin development tool:
